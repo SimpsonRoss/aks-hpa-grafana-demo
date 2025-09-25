@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: metrics-demo
+  namespace: app
+  labels: { app: metrics-demo }
+spec:
+  selector: { app: metrics-demo }
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP

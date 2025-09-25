@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-demo
+  namespace: app
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: metrics-demo }
+  template:
+    metadata:
+      labels: { app: metrics-demo }
+    spec:
+      containers:
+        - name: web
+          image: simpsonross/aks-metrics-demo:0.1
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet: { path: /healthz, port: 8000 }
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: { path: /healthz, port: 8000 }
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests: { cpu: "100m", memory: "128Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
