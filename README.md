@@ -6,7 +6,7 @@ This project demonstrates how to deploy a simple CPU-bound application on Azure 
 
 ## Demo
 
-![HPA scaling demo](demo.gif)
+![HPA scaling demo](docs/img/demo1.gif)
 
 ---
 
