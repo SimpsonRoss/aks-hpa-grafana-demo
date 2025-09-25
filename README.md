@@ -6,6 +6,8 @@ This project demonstrates how to deploy a simple CPU-bound application on Azure 
 
 ## Demo
 
+The Horizontal Pod Autoscaler scales from 2 → 5 pods under CPU load, then back down as load subsides.
+
 ![HPA scaling demo](docs/img/demo-1.gif)
 
 ---
