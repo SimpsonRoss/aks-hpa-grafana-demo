@@ -4,6 +4,12 @@ This project demonstrates how to deploy a simple CPU-bound application on Azure 
 
 ---
 
+## Demo
+
+![HPA scaling demo](demo.gif)
+
+---
+
 ## 🚀 Features
 
 - **Horizontal Pod Autoscaler (HPA)** — scales pods automatically based on CPU usage (% of requested resources).
